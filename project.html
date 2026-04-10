@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading project...</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/reset.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/project.css">
+
+    <!-- Default SEO placeholders (router will overwrite) -->
+    <meta name="description" content="">
+    <meta property="og:title" content="">
+    <meta property="og:image" content="">
+    <link rel="canonical" href="">
+
+    <!-- Universal header logic MUST load before router -->
+    <script src="/assets/js/header.js" defer></script>
+
+    <!-- Router that loads template + JSON -->
+    <script src="/assets/js/project-router.js" defer></script>
+</head>
+
+<body class="project-page">
+    <header>
+        <a href="/">
+            <img class="site-logo" alt="Portfolio's logo." src="/assets/images/logos/SVG/site-logo.svg">
+        </a>
+
+        <button class="burger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+
+        <nav class="navigation-group">
+            <div class="lang-dropdown">
+                <button class="lang-current" id="langCurrent">
+                    EN
+                    <span class="chevron"></span>
+                </button>
+
+                <div class="lang-menu" id="langMenu">
+                    <button data-lang="en">EN</button>
+                    <button data-lang="fr">FR</button>
+                </div>
+            </div>
+            <ul class="main-menu">
+                <li><a href="/about">About</a></li>
+                <li><a href="/work">Projects</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="menu-overlay"></div>
+    </header>
+
+
+    <!-- Dynamic template injection -->
+    <div id="project-template-container"></div>
+    <footer class="project-footer">
+        <div class="project-status-bar" id="project-status-bar">
+            <span id="project-status-text"></span>
+        </div>
+    </footer>
+
+    <script src="/assets/js/script.js"></script>
+    <script src="/assets/js/i18n.js"></script>
+</body>
+</html>

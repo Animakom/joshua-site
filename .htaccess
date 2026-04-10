@@ -1,0 +1,30 @@
+Options -MultiViews
+
+RewriteEngine On
+RewriteBase /
+
+# ----------------------------------------
+# Force le domaine propre (évite /homez.xx/)
+# ----------------------------------------
+RewriteCond %{REQUEST_URI} ^/homez\.
+RewriteRule ^.*$ / [L,R=301]
+
+# ----------------------------------------
+# Routes propres pour les projets
+# /project/NOM -> project.html?slug=NOM
+# ----------------------------------------
+RewriteRule ^project/([^/]+)/?$ /project.html?slug=$1 [L,QSA]
+
+# ----------------------------------------
+# Routes pour les pages internes
+# ----------------------------------------
+RewriteRule ^about/?$ /assets/pages/about-me.html [L]
+RewriteRule ^contact/?$ /assets/pages/contact.html [L]
+RewriteRule ^work/?$ /assets/pages/my-work.html [L]
+
+# ----------------------------------------
+# Fallback global → index.html (SPA mode)
+# ----------------------------------------
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]

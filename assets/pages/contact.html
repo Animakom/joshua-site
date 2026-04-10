@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact me ! - Joshua SANCHEZ - Portfolio</title>
+    <link rel="stylesheet" href="/assets/css/reset.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body data-page="contact">
+    <header>
+        <a href="/">
+            <img class="site-logo" alt="Portfolio's logo." src="/assets/images/logos/SVG/site-logo.svg">
+        </a>
+
+        <!-- MOBILE -->
+        <button class="burger" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- DESKTOP -->
+        <nav class="navigation-group">
+            <div class="lang-dropdown">
+                <button class="lang-current" id="langCurrent">
+                    EN
+                    <span class="chevron"></span>
+                </button>
+
+                <div class="lang-menu" id="langMenu">
+                    <button data-lang="en">EN</button>
+                    <button data-lang="fr">FR</button>
+                </div>
+            </div>
+            <ul class="main-menu">
+                <li><a href="/about" data-i18n="nav_about">About</a></li>
+                <li><a href="/work" data-i18n="nav_mywork">Projects</a></li>
+                <li><a href="/contact" data-i18n="nav_contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- THIS WAS MISSING -->
+        <div class="menu-overlay"></div>
+    </header>
+
+
+    <script src="/assets/js/header.js"></script>
+    <script src="/assets/js/script.js"></script>
+    <script> initUniversalHeader(); </script>
+    <script src="/assets/js/i18n.js"></script>
+</body>
+</html>

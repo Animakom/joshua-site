@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joshua Sanchez — Designer & Developer</title>
+    <meta name="description" content="Portfolio of Joshua Sanchez, creative designer & developer">
+    <link rel="stylesheet" href="/assets/css/reset.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body data-page="index">
+    <header>
+        <a href="/"><img class="site-logo" alt="Portfolio's logo." src="/assets/images/logos/SVG/site-logo.svg"></a>
+        <!--MOBILE-->
+        <button class="burger" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <!--DESKTOP-->
+        <nav class="navigation-group">
+            <div class="lang-dropdown">
+                <button class="lang-current" id="langCurrent">
+                    EN
+                    <span class="chevron"></span>
+                </button>
+
+                <div class="lang-menu" id="langMenu">
+                    <button data-lang="en">EN</button>
+                    <button data-lang="fr">FR</button>
+                </div>
+            </div>
+            <ul class="main-menu">
+                <li><a href="/about" data-i18n="nav_about">About</a></li>
+                <li><a href="/work" data-i18n="nav_mywork">Projects</a></li>
+                <li><a href="/contact" data-i18n="nav_contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="menu-overlay"></div>
+    </header>
+
+    <main>
+        <!-- ========================= HERO ========================= -->
+        <section class="hero">
+            <div class="hero-window">
+                <div class="hero-titlebar">
+                    <div class="hero-title-left">
+                        <span data-i18n="hero_window_title">WELCOME.TXT</span>
+                    </div>
+                    <div class="hero-title-buttons">
+                        <span class="hero-min"></span>
+                        <span class="hero-max"></span>
+                        <span class="hero-close"></span>
+                    </div>
+                </div>
+                <div class="hero-content">
+                    <h1 data-i18n="hero_title">Joshua Sanchez<br>Designer & Developer</h1>
+                    <p data-i18n="hero_subtitle" class="subtitle">
+                        I create modern digital experiences through design, branding, and development.
+                    </p>
+                    <p data-i18n="hero_description" class="description">
+                        My work blends clean aesthetics, storytelling, and technical craft to help brands and creators express their identity online.
+                    </p>
+                    <a href="/work" class="btn-primary">
+                        <span data-i18n="hero_btn">SEE MY WORK</span>
+                    </a>
+                </div>
+                <div class="hero-statusbar">
+                    <span data-i18n="statusbar">Ln 1, Col 1</span>
+                </div>
+            </div>
+            <div class="scroll-hint cyber">
+                <span class="arrow"></span><span class="arrow"></span><span class="arrow"></span>
+            </div>
+            <div class="scroll-hint-desktop left">
+                <span class="arrow"></span><span class="arrow"></span><span class="arrow"></span>
+            </div>
+            <div class="scroll-hint-desktop right">
+                <span class="arrow"></span><span class="arrow"></span><span class="arrow"></span>
+            </div>
+        </section>
+
+
+        <!-- ========================= ABOUT ========================= -->
+        <section class="about-section">
+            <div class="about-window">
+                <div class="window-titlebar">
+                    <div class="title-left">
+                        <img src="/assets/icons/notepad-win95-icon.png" alt="" class="window-icon">
+                        <span data-i18n="about_window_title" class="about-window-title">ABOUT.EXE</span>
+                    </div>
+                    <div class="title-buttons">
+                        <span class="btn-min"></span>
+                        <span class="btn-max"></span>
+                        <span class="btn-close"></span>
+                    </div>
+                </div>
+                <div class="menu-bar">
+                    <span data-i18n="home_menu_bar_file">File</span>
+                    <span data-i18n="home_menu_bar_edit">Edit</span>
+                    <span data-i18n="home_menu_bar_search">Search</span>
+                    <span data-i18n="home_menu_bar_help">Help</span>
+                </div>
+                <div class="window-body">
+                    <p class="about-text">
+                        <span data-i18n="home_about_description">
+                            Hello! I'm Joshua, a passionate designer and developer dedicated to crafting engaging digital experiences. With a keen eye for aesthetics and a strong foundation in coding, I bring ideas to life through innovative design and seamless functionality.
+                        </span>
+                        <span class="caret">I</span>
+                    </p>
+                    <a href="/about" class="btn-secondary">
+                        <span data-i18n="learn_more_btn">LEARN MORE</span>
+                    </a>
+                </div>
+                <div class="scrollbar">
+                    <div class="scroll-track"><div class="scroll-thumb"></div></div>
+                    <div class="scroll-down"></div>
+                </div>
+                <div class="status-bar">
+                    <span data-i18n="statusbar">Ln 1, Col 1</span>
+                    <span>INS</span>
+                </div>
+
+            </div>
+            <div class="win-activate-watermark">
+                <p class="line1" data-i18n="winActivateTitle">Activate Windows</p>
+                <p class="line2" data-i18n="winActivateSub">Go to Settings to activate Windows.</p>
+            </div>
+        </section>
+
+        <!-- ========================= PROJECTS ========================= -->
+        <section id="projects" class="projects-section">
+
+            <div class="marquee-title">
+                <div class="marquee-inner">
+                    <!-- repeated marquee text -->
+                    <span data-i18n="marquee_work">ALL MY WORK</span>
+                    <span data-i18n="marquee_work">ALL MY WORK</span>
+                    <span data-i18n="marquee_work">ALL MY WORK</span>
+                    <span data-i18n="marquee_work">ALL MY WORK</span>
+                    <span data-i18n="marquee_work">ALL MY WORK</span>
+                    <span data-i18n="marquee_work">ALL MY WORK</span>
+                    <span data-i18n="marquee_work">ALL MY WORK</span>
+                    <span data-i18n="marquee_work">ALL MY WORK</span>
+                    <span data-i18n="marquee_work">ALL MY WORK</span>
+                    <span data-i18n="marquee_work">ALL MY WORK</span>
+                    <span data-i18n="marquee_work">ALL MY WORK</span>
+                    <span data-i18n="marquee_work">ALL MY WORK</span>
+                    <span data-i18n="marquee_work">ALL MY WORK</span>
+                    <span data-i18n="marquee_work">ALL MY WORK</span>
+                    <span data-i18n="marquee_work">ALL MY WORK</span>
+                </div>
+            </div>
+            <div class="project-filters">
+                <button data-category="web" class="active" data-i18n="card_group_web">WEB</button>
+                <button data-category="print" data-i18n="card_group_print">PRINT</button>
+                <button data-category="branding" data-i18n="card_group_branding">BRANDING</button>
+                <button data-category="dev" data-i18n="card_group_dev">DEV</button>
+            </div>
+            <div class="projects-grid" id="projectsGrid">
+                <!-- JS inserts cards -->
+            </div>
+        </section>
+
+        <!-- ========================= SKILLS ========================= -->
+        <section class="skills-section">
+            <div class="skills-bg"></div>
+
+            <h2 class="skills-title" data-i18n="skills_section_title">SKILLS</h2>
+            <div id="skillsTree"></div>
+        </section>
+        <div id="skillModal" class="skill-modal hidden">
+            <h3 class="modal-title"></h3>
+            <h4 class="modal-sub"></h4>
+            <p class="modal-desc"></p>
+        </div>
+
+        <!-- ========================= CONTACT ========================= -->
+        <section class="contact-section">
+            <div class="about-window contact-window">
+                <div class="window-titlebar">
+                    <div class="title-left">
+                        <img src="/assets/icons/telephone-icon.png" alt="" class="window-icon">
+                        <span class="window-title" data-i18n="contact_window_title">CONTACT.EXE</span>
+                    </div>
+                    <div class="title-buttons">
+                        <span class="btn-min"></span>
+                        <span class="btn-max"></span>
+                        <span class="btn-close"></span>
+                    </div>
+                </div>
+                <div class="menu-bar">
+                    <span data-i18n="home_menu_bar_file">File</span>
+                    <span data-i18n="home_menu_bar_edit">Edit</span>
+                    <span data-i18n="home_menu_bar_search">Search</span>
+                    <span data-i18n="home_menu_bar_help">Help</span>
+                </div>
+                <div class="window-body contact-content">
+                    <h2 class="contact-title" data-i18n="home_contact_title">&gt; GIVE ME A CALL</h2>
+                    <p class="contact-subtitle" data-i18n="home_contact_sub">
+                        ...Or send me an email<span class="cursor-blink">_</span>
+                    </p>
+                    <div class="contact-fields">
+                        <a href="tel:0663411765" class="win95-btn">06 63 41 17 65</a>
+                        <a href="mailto:contactjsspro@mail.com" class="win95-btn">contactjsspro@mail.com</a>
+                    </div>
+                </div>
+                <div class="status-bar">
+                    <span data-i18n="fake_running_label">Running…</span>
+                    <span data-i18n="fake_load_clear_label">Loaded successfully</span>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="system-footer">
+        <div class="footer-status-bar">
+            <span>STATUS : ONLINE</span>
+            <span>VERSION : JSS v1.4</span>
+            <span>SIGNAL : STABLE</span>
+            <span>UPLINK : CONTACT.EXE</span>
+        </div>
+        <div class="footer-bottom">
+            <h4 data-i18n="copyright_footer">
+                © 2025 Joshua SANCHEZ — System build 3.37 — All protocols secure for now.
+            </h4>
+        </div>
+
+    </footer>
+
+    <script src="/assets/js/skills.js"></script>
+    <script src="/assets/js/script.js"></script>
+    <script src="/assets/js/projects.js"></script>
+    <script src="/assets/js/i18n.js"></script>
+</body>
+
+</html>

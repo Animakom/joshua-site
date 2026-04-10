@@ -1,0 +1,305 @@
+/* =========================================================
+   GLOBAL WRAPPER — FULLSCREEN + CLEANER
+========================================================= */
+
+.error-wrapper {
+    min-height: 100vh;
+    width: 100%;
+    background: #000;
+    color: #d6d6d6;
+
+    display: flex;
+    justify-content: center;
+    align-items: top;
+
+    padding: 0;
+    margin: 0;
+
+    font-family: "VCR OSD Mono", monospace;
+    position: relative;
+    overflow: hidden;
+}
+
+.error-wrapper::before {
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.015) 0px,
+        rgba(255,255,255,0.015) 1px,
+        transparent 3px,
+        transparent 4px
+    );
+    opacity:0.14;
+}
+
+
+/* =========================================================
+   TERMINAL BLOCK — MORE LIKE THE REFERENCE
+========================================================= */
+
+.terminal {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+
+    padding: 80px; 
+    margin: 0;
+
+    background: none; 
+    border: none;  
+    border-radius: 0; 
+    backdrop-filter: none;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+}
+
+h1 {
+    font-size: 42px;
+    line-height: 1.15;
+    margin-bottom: 18px;
+    letter-spacing: -0.5px;
+
+    color: #fff;
+    text-shadow: 0 0 12px rgba(255, 0, 128, .45);
+}
+
+.glitch {
+    color: var(--hot-fuchsia);
+    font-size: 20px;
+    margin-bottom: 35px;
+}
+
+.title-traceback {
+    margin-bottom: 12px;
+    font-size: 15px;
+    letter-spacing: 0.08em;
+    opacity: 0.75;
+}
+
+
+/* Log */
+.log {
+    font-size: 15px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    margin-bottom: 45px;
+}
+
+
+/* =========================================================
+   BUTTONS — BIGGER + CLEANER
+========================================================= */
+
+.actions {
+    display: flex;
+    gap: 26px;
+    margin-top: 30px;
+}
+
+.error-wrapper .btn-primary {
+    min-width: 210px;
+    padding: 14px 32px;
+    text-align: center;
+
+    background: #0c0c0c;
+    color: var(--snow);
+
+    border: 1px solid rgba(255,255,255,0.15);
+    transition: 0.18s ease;
+}
+
+.error-wrapper .btn-primary:hover {
+    transform: translateY(-2px);
+    border-color: var(--hot-fuchsia);
+    color: #000;
+    background: var(--hot-fuchsia);
+    box-shadow: 0 0 18px var(--hot-fuchsia);
+}
+
+
+/* =========================================================
+   DECISION BLOCK
+========================================================= */
+
+.decision-block {
+    margin-top: 60px;
+}
+
+.decision-text {
+    font-size: 17px;
+    margin-bottom: 18px;
+    color: #fff;
+}
+
+.cmd-caret {
+    display: inline-block;
+    width: 11px;
+    height: 18px;
+    background: var(--snow);
+    animation: caretBlink 0.8s steps(1) infinite;
+}
+
+
+/* =========================================================
+   WARNING OUTPUT
+========================================================= */
+
+#warningLog {
+    margin-top: 25px;
+    font-size: 14px;
+    opacity: 0.8;
+    white-space: pre-line;
+}
+
+
+
+/* =========================================================
+   TERMINAL COLORS
+========================================================= */
+
+.green { color: #19ff6b; }
+.yellow { color: #e6e600; }
+.red { color: #ff5566; }
+.justDont { color: var(--hot-fuchsia); }
+
+
+
+/* =========================================================
+   GLITCH EFFECTS (UNCHANGED)
+========================================================= */
+
+@keyframes glitchFlicker {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px,1px); }
+    40% { transform: translate(2px,-1px); }
+    60% { transform: translate(-1px,2px); }
+    80% { transform: translate(1px,-2px); }
+    100% { transform: translate(0); }
+}
+
+.glitch-anim {
+    animation: glitchFlicker 0.12s steps(2);
+}
+
+.error-wrapper.glitch-1 .terminal {
+    filter: hue-rotate(300deg) contrast(1.1);
+}
+.error-wrapper.glitch-2 .terminal {
+    filter: hue-rotate(320deg) contrast(1.3) saturate(1.4);
+    transform: skewX(1.5deg);
+}
+.error-wrapper.glitch-3 .terminal {
+    filter: hue-rotate(330deg) contrast(1.6) saturate(1.8) brightness(1.3);
+    transform: skewX(100deg) scale(4);
+}
+
+
+/* =========================================================
+   LANG SWITCH
+========================================================= */
+
+.lang-switch {
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    display: flex;
+    gap: 12px;
+    z-index: 50;
+}
+
+.lang-switch button {
+    background: transparent;
+    color: var(--snow);
+    border: 1px solid var(--snow);
+    padding: 6px 12px;
+    font-size: 12px;
+    transition: 0.2s ease;
+}
+
+.lang-switch button:hover {
+    background: var(--snow);
+    color: #000;
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLETS & PHONES
+========================================================= */
+
+/* Medium screens (≤ 1024px) */
+@media (max-width: 1024px) {
+    .terminal {
+        padding-top: 80px;
+    }
+
+    h1 {
+        font-size: 34px;
+    }
+
+    .log {
+        font-size: 14px;
+    }
+}
+
+/* Small tablets & large phones (≤ 768px) */
+@media (max-width: 768px) {
+    .terminal {
+        padding: 60px;
+    }
+
+    h1 {
+        font-size: 28px;
+        line-height: 1.25;
+    }
+
+    .glitch {
+        font-size: 18px;
+    }
+
+    .actions {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .error-wrapper .btn-primary {
+        width: 100%;
+        min-width: unset;
+        text-align: center;
+        padding: 14px 20px;
+    }
+}
+
+/* Mobile phones (≤ 480px) */
+@media (max-width: 480px) {
+    .terminal {
+        padding-top: 80px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .log {
+        font-size: 13px;
+        line-height: 1.45;
+    }
+
+    .decision-block {
+        margin: 0px;
+    }
+
+    .decision-text {
+        font-size: 15px;
+    }
+
+    #warningLog {
+        font-size: 12px;
+    }
+}

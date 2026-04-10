@@ -1,0 +1,217 @@
+{
+  "en": {
+
+    "meta": {
+      "title_index": "Joshua Sanchez — Designer & Developer",
+      "desc_index": "Portfolio of Joshua Sanchez, creative designer & developer.",
+
+      "title_404": "HELP ! - 404"
+    },
+
+    "index": {
+      "nav_about": "About",
+      "nav_mywork": "Projects",
+      "nav_contact": "Contact",
+
+      "hero_window_title": "WELCOME.TXT",
+      "hero_title": "Joshua Sanchez<br>Designer & Developer",
+      "hero_subtitle": "I create modern digital experiences through design, branding, and development.",
+      "hero_description": "My work blends clean aesthetics, storytelling, and technical craft to help brands and creators express their identity online.",
+      "hero_btn": "SEE MY WORK",
+
+      "statusbar": "Ln 1, Col 1",
+
+      "about_window_title": "ABOUT.EXE",
+      "home_menu_bar_file": "File",
+      "home_menu_bar_edit": "Edit",
+      "home_menu_bar_search": "Search",
+      "home_menu_bar_help": "Help",
+
+      "home_about_description": "Hello! I'm Joshua, a passionate designer and developer dedicated to crafting engaging digital experiences. With a keen eye for aesthetics and a strong foundation in coding, I bring ideas to life through innovative design and seamless functionality.",
+      "learn_more_btn": "LEARN MORE",
+
+      "winActivateTitle": "Activate Windows",
+      "winActivateSub": "Go to Settings to activate Windows.",
+
+        "marquee_work": "ALL MY WORK",
+
+      "card_group_web": "WEB",
+      "card_group_print": "PRINT",
+      "card_group_branding": "BRANDING",
+      "card_group_dev": "DEV",
+
+      "skills_section_title": "SKILLS",
+
+      "contact_window_title": "CONTACT.EXE",
+      "home_contact_title": "> GIVE ME A CALL",
+      "home_contact_sub": "...Or send me an email",
+
+      "fake_running_label": "Running…",
+      "fake_load_clear_label": "Loaded successfully",
+
+      "copyright_footer": "© 2025 Joshua SANCHEZ — System build 3.37 — All protocols secure for now."
+    },
+    "404": {
+      "404_title": ">WHAT HAVE YOU DONE?<br>404 // NOT_FOUND",
+      "404_subtitle": "PAGE MISSING_",
+      "404_traceback_title": "FULL TRACEBACK :",
+
+      "404_requested_url_label": "REQUESTED URL:",
+      "404_requested_url_value": "/whatever-you-tried",
+
+      "404_client_id_label": "CLIENT ID:",
+      "404_client_id_value": "192.168.0.7 (YOUR DEVICE HAS BEEN com█████sed.\nPLEASE CONTACT █████ for further instruction.)",
+
+      "404_do_not_attempt": "DO NOT ATTEMPT TO SHUT DOWN YOUR DEVICE.",
+
+      "404_server_response_label": "SERVER RESPONSE:",
+      "404_server_response_value": "404 NOT FOUND - SERVER HAS BEEN TAMPERED WITH",
+
+      "404_info_label": "INFO:",
+      "404_info_value": "RESOURCE COULD NOT BE RETRIEVED.",
+
+      "404_reason_label": "REASON:",
+      "404_reason_value1": "NO LONGER EXISTS",
+      "404_reason_or": "OR",
+      "404_reason_value2": "HAS BEEN MOVED",
+
+      "404_timestamp_label": "TIMESTAMP:",
+
+      "404_error_code": "ERROR CODE: PAX.0x90_404_9001",
+
+      "404_decision_text": "WHAT WILL YOU DO NOW?",
+
+      "404_back_btn": "90 BaCK?",
+      "404_keep_going": "K33P G0ING ?"
+    },
+
+    "about": {
+      "nav_about": "About",
+      "nav_mywork": "Projects",
+      "nav_contact": "Contact"
+    },
+
+    "contact": {
+      "nav_about": "About",
+      "nav_mywork": "Projects",
+      "nav_contact": "Contact"
+    },
+
+    "mywork": {      
+      "nav_about": "About",
+      "nav_mywork": "Projects",
+      "nav_contact": "Contact"
+    }
+  },
+
+  "fr": {
+    "meta": {
+      "title_index": "Joshua Sanchez — Designer & Développeur",
+      "desc_index": "Portfolio de Joshua Sanchez, designer & développeur créatif.",
+
+      "title_404": "À L'AIDE ! - 404"
+    },
+
+    "index": {
+
+      "nav_about": "À propos",
+      "nav_mywork": "Projets",
+      "nav_contact": "Contact",
+
+      "hero_window_title": "BIENVENUE.TXT",
+      "hero_title": "Joshua Sanchez<br>Designer & Développeur",
+      "hero_subtitle": "Je crée des expériences digitales modernes à travers le design, le branding, et le développement.",
+      "hero_description": "Mon travail allie une esthétique épurée, le storytelling, et un savoir-faire technique pour aider les marques et les créateurs à exprimer leur identité en ligne.",
+      "hero_btn": "VOIR MON TRAVAIL",
+
+      "statusbar": "Lgn 1, Col 1",
+
+      "about_window_title": "À PROPOS.EXE",
+      "home_menu_bar_file": "Fichier",
+      "home_menu_bar_edit": "Éditer",
+      "home_menu_bar_search": "Rechercher",
+      "home_menu_bar_help": "Aide",
+
+      "home_about_description": "Bonjour ! Je suis Joshua, un designer et développeur passionné dédié à la création d'expériences digitales engageantes. Avec un œil attentif pour l'esthétique et une solide base en codage, je donne vie aux idées à travers un design innovant et une fonctionnalité fluide.",
+      "learn_more_btn": "EN SAVOIR PLUS",
+
+      "winActivateTitle": "Veuillez activer Windows",
+      "winActivateSub": "Allez dans les paramètres pour activer Windows.",
+
+      "marquee_work": "MON TRAVAIL",
+
+      "card_group_web": "WEB",
+      "card_group_print": "PRINT",
+      "card_group_branding": "BRANDING",
+      "card_group_dev": "DEV",
+
+      "skills_section_title": "COMPÉTENCES",
+
+      "contact_window_title": "CONTACT.EXE",
+      "home_contact_title": "> APPELEZ-MOI",
+      "home_contact_sub": "...Ou envoyez-moi un email",
+
+      "fake_running_label": "Exécution…",
+      "fake_load_clear_label": "Chargé avec succès",
+
+      "copyright_footer": "© 2025 Joshua SANCHEZ — System build 3.37 — Protocoles sécurisés pour le moment."
+    },
+
+    "about": {
+      "nav_about": "À propos",
+      "nav_mywork": "Projets",
+      "nav_contact": "Contact"
+    },
+
+    "contact": {
+      "nav_about": "À propos",
+      "nav_mywork": "Projets",
+      "nav_contact": "Contact"
+    },
+
+    "mywork": {      
+      "nav_about": "À propos",
+      "nav_mywork": "Projets",
+      "nav_contact": "Contact"
+    },
+
+    "footer": {},
+
+    "header": {},
+
+    "404": {
+      "404_title": ">QU'AS-TU FAIT ?<br>404 // INTROUVABLE",
+      "404_subtitle": "PAGE MANQUANTE_",
+      "404_traceback_title": "TRACE COMPLÈTE :", 
+
+      "404_requested_url_label": "URL DEMANDÉE :",
+      "404_requested_url_value": "/slug-introuvable",
+
+      "404_client_id_label": "ID CLIENT :",
+      "404_client_id_value": "192.168.0.7 (VOTRE APPAREIL A ÉTÉ COM█████S.\nVEUILLEZ CONTACTER █████ pour plus d'instructions.)",
+
+      "404_do_not_attempt": "NE TENTEZ SURTOUT PAS D'ÉTEINDRE VOTRE APPAREIL.",
+
+      "404_server_response_label": "RÉPONSE SERVEUR :",
+      "404_server_response_value": "404 INTROUVABLE — SERVEUR MODIF██",
+
+      "404_info_label": "INFO :",
+      "404_info_value": "LA RESSOURCE N'A PAS PU ÊTRE RÉCUPÉRÉE.",
+
+      "404_reason_label": "RAISON :",
+      "404_reason_value1": "N'EXISTE PLUS",
+      "404_reason_or": "OU",
+      "404_reason_value2": "A ÉTÉ DÉPLACÉE",
+
+      "404_timestamp_label": "HORODATAGE :", 
+
+      "404_error_code": "CODE D'ERREUR : PAX.0x90_404_9001",
+
+      "404_decision_text": "QUE DÉCIDEZ-VOUS MAINTENANT ?",
+
+      "404_back_btn": "R3t0UR ?",
+      "404_keep_going": "C0NTINU3R ?"
+    }
+
+  }
+}

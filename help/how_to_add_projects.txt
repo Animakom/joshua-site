@@ -1,0 +1,193 @@
+✅ STEP 1 — Add the project inside projects.json
+
+Path:
+
+/assets/data/projects.json
+
+
+Duplicate an existing entry and change values:
+
+"mysuperproject": {
+  "title": "My Super Project",
+  "slug": "mysuperproject",
+  "type": "landing",
+  "subtitle": "Landing Page – WordPress",
+  "year": "2025",
+  "role": "WordPress Development, UI/UX",
+  "description": [
+    "Short paragraph about what the project is.",
+    "Second paragraph about what you built."
+  ],
+  "thumbnail": "/assets/images/PNG/projects/thumbs/mysuperproject.png",
+  "heroImage": "/assets/images/PNG/projects/thumbs/mysuperproject-hero.png",
+  "gallery": [
+    "/assets/images/PNG/projects/mysuperproject/1.png",
+    "/assets/images/PNG/projects/mysuperproject/2.png",
+    "/assets/images/PNG/projects/mysuperproject/3.png"
+  ],
+  "technos": [
+    "WordPress",
+    "Elementor",
+    "Custom JS"
+  ],
+  "deliverables": [
+    "Website design",
+    "Responsive build",
+    "SEO setup"
+  ]
+}
+
+
+👉 IMPORTANT:
+The object key (first line) & the "slug" must be exactly the same:
+
+"mysuperproject": {  ❗ KEY
+    "slug": "mysuperproject",  ❗ SLUG
+
+✅ STEP 2 — Add your images
+
+Place your images following the same structure:
+
+/assets/images/PNG/projects/thumbs/mysuperproject.png           ← index card thumbnail
+/assets/images/PNG/projects/thumbs/mysuperproject-hero.png      ← big hero image
+/assets/images/PNG/projects/mysuperproject/1.png                ← gallery images
+/assets/images/PNG/projects/mysuperproject/2.png
+/assets/images/PNG/projects/mysuperproject/3.png
+
+
+You can add more if you want.
+Just list them in "gallery" in the JSON.
+
+✅ STEP 3 — Add the project to the INDEX page grid
+
+Your index project cards come from:
+
+/assets/js/projects.js
+
+
+Each category has its own array (web, print, branding, dev).
+
+Find the category where your project belongs. Example: web.
+
+Add it like this:
+
+{
+    title: "My Super Project",
+    subtitle: "Landing Page – WordPress",
+    description: "A short description for the card.",
+    image: "../../assets/images/png/projects/thumbs/mysuperproject.png",
+    type: "landing",
+    slug: "mysuperproject"
+},
+
+
+👉 IMPORTANT:
+The slug here must match the JSON slug.
+
+Your card will automatically:
+
+appear in the grid
+
+animate on load
+
+show the correct type color
+
+use the correct thumbnail
+
+and link to
+
+project.html?slug=mysuperproject
+
+
+Thanks to this line:
+
+<a class="btn-win95" href="project.html?slug=${item.slug}">
+
+✅ STEP 4 — DONE. You don’t need to create ANY HTML page
+
+Your dynamic router (project-router.js) handles everything:
+
+loads the template
+
+loads JSON
+
+injects hero, lists, gallery, title
+
+applies the correct CSS color
+
+binds lightbox
+
+initializes header
+
+sets SEO meta tags
+
+Your new project now works at:
+
+yourdomain.com/project.html?slug=mysuperproject
+
+🟦 OPTIONAL: Clean URL (if .htaccess is active later)
+
+When you deploy online:
+
+/project/mysuperproject
+
+
+will automatically work via:
+
+RewriteRule ^project/([^/]+)/?$ project.html?slug=$1 [L,QSA]
+
+
+You don’t need to touch anything to make this work.
+
+⭐ COMPLETE SUMMARY (copy/paste/keep this)
+✔ 1 — Add to projects.json
+
+Add a new JSON block with:
+
+title
+
+slug
+
+images
+
+description
+
+technos
+
+deliverables
+
+✔ 2 — Add images in correct folders
+
+/thumbs/slug.png
+
+/slug/1.png
+
+/slug/2.png
+
+✔ 3 — Add card in projects.js
+
+Inside the right category:
+
+{ title: "...", slug: "mysuperproject", ... }
+
+✔ 4 — That’s it
+
+Your new project instantly:
+
+shows on index
+
+loads with correct design
+
+has dynamic SEO
+
+uses the full Win95 template
+
+has lightbox gallery
+
+works with header
+
+works with future clean URLs
+
+🎉 You now have a fully scalable portfolio
+
+You can add 100 projects and it’ll still feel clean and fast.

@@ -1,0 +1,506 @@
+/* =========================================================
+   PROJECT PAGE — JSS RETRO-CYBER STYLE (TRUE FINAL VERSION)
+   Uses Win95 frames ONLY for text blocks, exactly like index.html
+   Everything is cohesive with global style.css
+========================================================= */
+
+
+/* ----------------------------------------------
+   PAGE LAYOUT BASE
+---------------------------------------------- */
+.project-page {
+    background: var(--background-dark);
+    color: var(--snow);
+    padding-bottom: 180px;
+    font-family: "Bricolage Grotesque", sans-serif;
+}
+
+
+
+/* =========================================================
+   HERO — FULL WIDTH WIN95 FRAME + GLOW
+========================================================= */
+
+.project-hero {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto 70px;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.project-hero img {
+    width: 100%;
+    height: 80vh;
+    object-fit: cover;
+
+    /* Ken Burns */
+    animation: kenburns 10s ease-in-out forwards;
+    transform-origin: center;
+    will-change: transform;
+}
+
+
+@keyframes kenburns {
+    0% {
+        transform: scale(1) translate(0, 0);
+    }
+    50% {
+        transform: scale(1.08) translate(1%, 1%);
+    }
+    100% {
+        transform: scale(1.16) translate(2%, 2%);
+    }
+}
+
+/* =========================================================
+   WIN95 WINDOW BLOCKS (THE SAME FROM INDEX)
+   Reused for intro, description, technos / deliverables
+========================================================= */
+
+.project-window {
+    width: 100%;
+    max-width: 900px;
+    margin: 40px auto 60px;
+    background: #1a1a1a;
+    border: 2px solid #000;
+    box-shadow:
+        0 0 0 2px #555,
+        0 10px 30px rgba(0,0,0,0.45);
+}
+
+/* Title bar */
+.project-window .window-titlebar {
+    background: #202020;
+    color: var(--snow);
+    padding: 6px 10px;
+    border-bottom: 2px solid #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "VCR OSD Mono";
+    font-size: 0.9rem;
+}
+
+/* Body */
+.project-window .window-body {
+    padding: 28px 32px 38px;
+    font-family: "Bricolage Grotesque";
+    color: var(--snow);
+    line-height: 1.7;
+}
+
+
+
+/* =========================================================
+   INTRO WINDOW
+========================================================= */
+
+#project-intro-window h1 {
+    font-family: "VCR OSD Mono", monospace;
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+#project-intro-window .subtitle {
+    text-align: center;
+    opacity: 0.8;
+    margin-bottom: 0;
+}
+
+
+
+/* =========================================================
+   DESCRIPTION BLOCK (same window)
+========================================================= */
+#project-description-window p {
+    margin-bottom: 16px;
+    opacity: 0.9;
+}
+
+
+
+/* =========================================================
+   PANELS (TECHNO + DELIVERABLES)
+   Two windows blended using a grid inside one frame
+========================================================= */
+
+.project-panels-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px; /* increased for readability */
+    align-items: start; /* keep titles aligned */
+}
+
+
+.project-panel h3 {
+    font-family: "VCR OSD Mono";
+    color: var(--hot-fuchsia);
+    font-size: 1.9rem;
+    margin-bottom: 12px;
+}
+
+.project-panel ul li {
+    margin-bottom: 8px;
+    opacity: 0.9;
+    font-family: "Bricolage Grotesque";
+}
+
+/* ============================================
+   CLEAN RETRO LIST STYLE (WIN95 + CYBER TOUCH)
+============================================ */
+
+.project-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-top: 10px;
+}
+
+.project-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.3rem;
+    font-family: "Bricolage Grotesque", sans-serif;
+    opacity: 0.9;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+/* cyber list bullet */
+.project-list li::before {
+    content: "▹"; /* little triangle bullet */
+    font-size: 3rem;
+    color: var(--hot-fuchsia);
+    opacity: 0.85;
+    transform: translateY(-1px);
+}
+
+
+
+/* =========================================================
+   GALLERY — RETRO TECH + WIN95 FRAMED IMAGES + RGB GLITCH
+========================================================= */
+
+.project-gallery {
+    max-width: 1200px;
+    margin: 70px auto 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    gap: 28px;
+}
+
+/* Outer Win95 Frame */
+.project-gallery figure {
+    border: 1px solid #FFFFFF25;
+    overflow: hidden;
+    position: relative;
+    background: #111;
+    transition: transform 0.3s ease;
+}
+
+/* Image */
+.project-gallery img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    cursor: pointer;
+    transition:
+        transform 0.35s ease,
+        filter 0.35s ease;
+}
+
+/* RGB chromatic glitch + gentle lift */
+.project-gallery figure:hover img {
+    transform: scale(1.06);
+    filter:
+        brightness(1.5)
+        saturate(0);
+}
+
+
+/* =========================================================
+   LIGHTBOX (JS-FREE INSERTION)
+========================================================= */
+
+#lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.88);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    z-index: 99999;
+}
+
+#lightbox.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+#lightbox img {
+    max-width: 95%;
+    max-height: 85vh;
+    border: 2px solid #ffffff35;
+}
+
+
+
+/* Close button */
+#lightbox-close {
+    position: absolute;
+    top: 40px;
+    right: 60px;
+    font-family: "VCR OSD Mono";
+    font-size: 1.8rem;
+    color: var(--snow);
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+#lightbox-close:hover {
+    opacity: 1;
+    transform: scale(1.3);
+}
+
+
+
+/* =========================================================
+   PROJECT STATUS BAR
+========================================================= */
+
+.project-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    backdrop-filter: blur(5px);
+}
+
+
+.project-status-bar {
+    width: 100%;
+    padding: 10px 12px;
+    font-family: "VCR OSD Mono";
+    border-top: 2px solid #000;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-status-bar span {
+    font-size: 0.9rem;
+    color: #000;
+    opacity: 0.85;
+}
+
+
+/* ============================================================
+   PROJECT PAGE — RESPONSIVE SYSTEM
+   Mobile ≤768px
+   Tablet 769–1024px
+   Large desktop ≥1400px
+   Ultra-wide ≥1800px
+============================================================ */
+
+
+/* -----------------------------------------
+   GLOBAL — prevent horizontal scroll
+----------------------------------------- */
+html, body {
+    overflow-x: clip;
+}
+
+
+/* -----------------------------------------
+   MOBILE — ≤768px
+----------------------------------------- */
+@media (max-width: 768px) {
+
+    /* HERO */
+    .project-hero img {
+        height: 55vh;
+        animation: kenburns 12s ease-in-out forwards;
+    }
+
+    /* WINDOWS */
+    .project-window {
+        margin-left: auto;
+        margin-right: auto;
+        width: 92%;
+        max-width: 92%;
+    }
+
+    .project-window .window-body {
+        padding: 20px 18px 26px;
+        font-size: 1rem;
+    }
+
+    #project-intro-window h1 {
+        font-size: 1.6rem;
+    }
+    #project-intro-window .subtitle {
+        font-size: 1rem;
+    }
+
+    #project-panels-window,
+    #project-description-window,
+    #project-intro-window {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* PANELS → single column */
+    .project-panels-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        justify-content: center;
+    }
+
+    .project-panel h3 {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+    /* Tighter list spacing on mobile */
+    .project-list li {
+        margin-bottom: 4px !important;   /* was 8px */
+        padding: 4px 0 !important;       /* adds uniform tight spacing */
+        font-size: 1.05rem;              /* slightly smaller text */
+        line-height: 1.2;                /* reduces vertical height */
+    }
+
+    /* Reduce the bullet size so it doesn't push lines downward */
+    .project-list li::before {
+        font-size: 2rem;                 /* was 3rem */
+        margin-right: 4px;
+    }
+
+    /* GALLERY */
+    .project-gallery {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 16px;
+    }
+
+    .project-gallery img {
+        height: 220px;
+    }
+
+    /* STATUS BAR — smaller */
+    .project-status-bar {
+        padding: 8px 10px;
+    }
+
+    #lightbox img {
+        max-height: 75vh;
+    }
+}
+
+
+
+/* -----------------------------------------
+   TABLET — 769px to 1024px
+----------------------------------------- */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    .project-window {
+        max-width: 92%;
+        margin: 40px auto;
+    }
+
+    .project-window .window-body {
+        padding: 24px 26px 32px;
+    }
+
+    /* PANELS → 2 columns but tighter */
+    .project-panels-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 26px;
+    }
+
+    .project-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 24px;
+    }
+
+    .project-gallery img {
+        height: 240px;
+    }
+}
+
+
+
+/* -----------------------------------------
+   SMALL DESKTOP — 1025px to 1399px
+----------------------------------------- */
+@media (min-width: 1025px) and (max-width: 1399px) {
+
+    .project-window {
+        max-width: 850px;
+    }
+
+    .project-panels-grid {
+        gap: 32px;
+    }
+
+    .project-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 26px;
+    }
+
+    .project-gallery img {
+        height: 250px;
+    }
+}
+
+
+
+/* -----------------------------------------
+   LARGE DESKTOP — ≥1400px
+----------------------------------------- */
+@media (min-width: 1400px) {
+
+    .project-window {
+        max-width: 950px;
+    }
+
+    .project-gallery {
+        max-width: 1300px;
+        gap: 32px;
+    }
+
+    .project-gallery img {
+        height: 280px;
+    }
+}
+
+
+
+/* -----------------------------------------
+   ULTRA-WIDE — ≥1800px
+----------------------------------------- */
+@media (min-width: 1800px) {
+
+    .project-window {
+        max-width: 1100px;
+    }
+
+    .project-gallery {
+        max-width: 1500px;
+        gap: 40px;
+    }
+
+    .project-gallery img {
+        height: 320px;
+    }
+}

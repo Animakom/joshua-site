@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACCESS TERMINAL // GATE</title>
+
+    <!-- ========== FONTS ========== -->
+    <style>
+        @font-face {
+            font-family: "VCR OSD Mono";
+            src: url("../fonts/VCR_OSD_MONO.ttf");
+        }
+    </style>
+
+    <!-- ========== GLOBAL STYLE ========== -->
+    <style>
+        :root {
+            --gold: #fcee09;
+            --fuchsia: #ff00aa;
+            --danger: #ff003c;
+            --snow: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #000;
+            color: var(--gold);
+            font-family: "VCR OSD Mono", monospace;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            text-align: center;
+        }
+
+        /* Scanlines */
+        body::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(255,255,255,0.03),
+                rgba(255,255,255,0.03) 1px,
+                transparent 2px,
+                transparent 4px
+            );
+            animation: scan 2s linear infinite;
+            z-index: 1;
+        }
+        @keyframes scan {
+            0% { background-position: 0 0; }
+            100% { background-position: 0 4px; }
+        }
+
+        h1 {
+            z-index: 2;
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+            animation: flickerText 1.5s infinite alternate;
+        }
+        @keyframes flickerText {
+            0% { text-shadow: 1px 0 red, -1px 0 plum; }
+            50% { text-shadow: 2px 0 red, -2px 0 plum; }
+            100% { text-shadow: -1px 0 red, 1px 0 plum; }
+        }
+
+        /* Input box */
+        #secret-input {
+            z-index: 2;
+            width: 260px;
+            padding: 0.7rem 1rem;
+            font-size: 1.1rem;
+            text-align: center;
+            background: transparent;
+            color: var(--gold);
+            border: none;
+            border-bottom: 2px solid var(--danger);
+            outline: none;
+            caret-color: var(--gold);
+            animation: caretBlink 1s step-start infinite;
+        }
+        @keyframes caretBlink { 50% { border-color: transparent; } }
+
+        .error {
+            margin-top: 15px;
+            color: var(--danger);
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 2;
+            min-height: 20px;
+        }
+        .error.show { opacity: 1; }
+
+        .back-home {
+            margin-top: 2rem;
+            color: #666;
+            font-size: 0.9rem;
+            text-decoration: none;
+            z-index: 2;
+            transition: 0.2s;
+        }
+        .back-home:hover {
+            color: var(--gold);
+        }
+
+        /* Dead Pixels */
+        .dead-pixel, .blinking-pixel {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: var(--gold);
+            z-index: 3;
+        }
+        .dead-pixel { opacity: 0.25; }
+        .blinking-pixel {
+            animation: blinkPixel 1.4s steps(1) infinite;
+        }
+        @keyframes blinkPixel {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 0; }
+        }
+        
+        /* ================================
+        BOTTOM MARQUEE BAR
+        ================================ */
+        .marquee-container {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 28px;
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0.85);
+            border-top: 1px solid rgba(255,255,255,0.05);
+            z-index: 5;
+        }
+
+        .marquee-text {
+            white-space: nowrap;
+            display: inline-block;
+            padding-left: 100%;
+            font-size: 0.75rem;
+            color: var(--gold);
+            opacity: 0.8;
+            letter-spacing: 1px;
+            animation: marqueeMove 18s linear infinite;
+        }
+
+        @keyframes marqueeMove {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+
+
+        /* ====== PAXIFICA OVERLAY ====== */
+        .corp-overlay {
+            position: fixed;
+            inset: 0;
+            background: #f2f2f2;
+            color: #111;
+            z-index: 9999;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            box-shadow: inset 0 0 40px rgba(0,0,0,0.2);
+        }
+
+        .corp-overlay.active {
+            display: flex;
+        }
+
+        .corp-overlay::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            opacity: 0.08;
+            background: url("PLACEHOLDER_PAXIFICA_LOGO") no-repeat center;
+            background-size: 60%;
+        }
+
+        .corp-content {
+            position: relative;
+            background: #fff;
+            color: #111;
+            padding: 2rem 2.5rem;
+            max-width: 520px;
+            border-left: 6px solid var(--danger);
+            border-radius: 6px;
+            box-shadow: 0 0 40px rgba(0,0,0,0.2);
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: none; }
+        }
+
+        #proceed-btn {
+            margin-top: 1.5rem;
+            padding: 0.7rem 1.4rem;
+            background: #111;
+            color: #fff;
+            border: 2px solid #000;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+        #proceed-btn:hover {
+            background: var(--danger);
+            border-color: var(--danger);
+        }
+
+        /* Glitch collapse */
+        .corp-content.glitch-out {
+            animation: collapse 0.8s forwards;
+        }
+        @keyframes collapse {
+            0% { opacity: 1; transform: none; }
+            50% { opacity: 0.3; transform: scale(1.05) skewX(6deg); }
+            100% { opacity: 0; transform: scale(1.2) skewX(18deg); }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Overlay -->
+    <div id="pax-overlay" class="corp-overlay">
+        <div class="corp-content">
+            <p><strong>:: UNAUTHORIZED ACCESS DETECTED ::</strong></p>
+            <p>This content is currently restricted under Directive <strong>3O77-B</strong>.</p>
+            <p>Unverified access attempts are logged and subject to review by internal compliance.</p>
+            <p>Please refrain from contacting the site owner directly. Doing so may complicate your status.</p>
+            <p style="color: var(--danger); font-family: monospace; margin-top: 1.5rem;">
+                >> trace.ping = [LOCKED]
+            </p>
+
+            <button id="proceed-btn">I know what I'm doing.</button>
+        </div>
+    </div>
+
+    <!-- Terminal -->
+    <h1>[ ACCESS TERMINAL ]</h1>
+
+    <input type="text" id="secret-input" placeholder="> ENTER : CODE" autocomplete="off">
+    <div id="error-msg" class="error">> ACCESS DENIED</div>
+    <a href="../../index.html" class="back-home">- Return Home -</a>
+
+    <div class="marquee-container">
+        <div class="marquee-text">
+            ENTER SECRET CODES HERE — ENTER SECRET CODES HERE — ENTER SECRET CODES HERE —
+        </div>
+    </div>
+
+
+    <!-- JS -->
+    <script>
+        /* -------------------------------
+           DEAD PIXELS
+        -------------------------------- */
+        const staticPixels = 10;
+        const blinkPixels = 6;
+
+        for (let i = 0; i < staticPixels; i++) {
+            const p = document.createElement("div");
+            p.className = "dead-pixel";
+            p.style.left = Math.random() * innerWidth + "px";
+            p.style.top = Math.random() * innerHeight + "px";
+            document.body.appendChild(p);
+        }
+
+        for (let i = 0; i < blinkPixels; i++) {
+            const p = document.createElement("div");
+            p.className = "blinking-pixel";
+            p.style.left = Math.random() * innerWidth + "px";
+            p.style.top = Math.random() * innerHeight + "px";
+            p.style.animationDuration = (Math.random()*2+1).toFixed(2)+"s";
+            p.style.animationDelay = (Math.random()*1).toFixed(2)+"s";
+            document.body.appendChild(p);
+        }
+
+        /* -------------------------------
+           PAXIFICA LOGIC
+        -------------------------------- */
+        const overlay = document.getElementById("pax-overlay");
+        const proceed = document.getElementById("proceed-btn");
+
+        const cameFromBreach = localStorage.getItem("fromBreach") === "yes";
+
+        if (cameFromBreach) {
+            if (Math.random() < 0.40) overlay.classList.add("active");
+        } else {
+            if (Math.random() < 0.10) overlay.classList.add("active");
+        }
+
+        localStorage.removeItem("fromBreach");
+
+        proceed.addEventListener("click", () => {
+            const box = document.querySelector(".corp-content");
+            box.classList.add("glitch-out");
+            setTimeout(() => overlay.classList.remove("active"), 800);
+        });
+
+        /* -------------------------------
+           TERMINAL INPUT
+        -------------------------------- */
+        const input = document.getElementById("secret-input");
+        const errorMsg = document.getElementById("error-msg");
+
+        const redirects = {
+            "TEST1": "PLACEHOLDER_REDIRECT_1",
+            "TEST2": "PLACEHOLDER_REDIRECT_2",
+            "TEST3": "PLACEHOLDER_REDIRECT_3"
+        };
+
+        input.addEventListener("keydown", e => {
+            if (e.key === "Enter") {
+                const v = input.value.trim().toUpperCase();
+                if (redirects[v]) {
+                    window.location.href = redirects[v];
+                } else {
+                    errorMsg.classList.add("show");
+                }
+            } else {
+                errorMsg.classList.remove("show");
+            }
+        });
+    </script>
+
+</body>
+</html>

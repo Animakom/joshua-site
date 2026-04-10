@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HELP ! - 404</title>
+    <meta name="description" content="Loading description…">
+    <link rel="stylesheet" href="/assets/css/reset.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/404.css">
+</head>
+
+<body data-page="404">
+
+    <!-- ==========================
+         LANGUAGE SWITCH (TOP-LEFT)
+    =========================== -->
+    <div class="lang-switch">
+        <button data-lang="en">EN</button>
+        <button data-lang="fr">FR</button>
+    </div>
+
+    <div class="error-wrapper">
+        <div class="terminal">
+
+            <h1 data-i18n="404_title">
+                >WHAT HAVE YOU DONE?<br>404 // NOT_FOUND
+            </h1>
+
+            <p class="glitch" data-i18n="404_subtitle">PAGE MISSING_</p>
+
+            <p class="title-traceback" data-i18n="404_traceback_title">FULL TRACEBACK :</p>
+
+            <pre class="log">
+<span data-i18n="404_requested_url_label">REQUESTED URL:</span> <span class="green" data-i18n="404_requested_url_value">/whatever-you-tried</span>
+<span data-i18n="404_client_id_label">CLIENT ID:</span> <span data-i18n="404_client_id_value">192.168.0.7 (YOUR DEVICE HAS BEEN com█████sed.
+PLEASE CONTACT █████ for further instruction.)</span>
+
+<span class="justDont" data-i18n="404_do_not_attempt">DO NOT ATTEMPT TO SHUT DOWN YOUR DEVICE.</span>
+
+<span data-i18n="404_server_response_label">SERVER RESPONSE:</span> <span class="yellow" data-i18n="404_server_response_value">404 NOT FOUND - SERVER HAS BEEN TAMPERED WITH</span>
+
+<span data-i18n="404_info_label">INFO:</span> <span data-i18n="404_info_value">RESOURCE COULD NOT BE RETRIEVED.</span>
+<span data-i18n="404_reason_label">REASON:</span> <span class="red" data-i18n="404_reason_value1">NO LONGER EXISTS</span> <span data-i18n="404_reason_or">OR</span> <span class="red" data-i18n="404_reason_value2">HAS BEEN MOVED</span>.
+
+<span data-i18n="404_timestamp_label">TIMESTAMP:</span> <span id="timestamp"></span>
+
+<span class="error-code" data-i18n="404_error_code">ERROR CODE: PAX.0x90_404_9001</span>
+            </pre>
+
+
+            <div class="decision-block">
+                <p class="decision-text" data-i18n="404_decision_text">
+                    WHAT WILL YOU DO NOW? <span class="cmd-caret"></span>
+                </p>
+
+                <div class="actions">
+                    <!-- DO NOT EDIT — already has data-i18n -->
+                    <a href="/" class="btn-primary"><span data-i18n="404_back_btn"></span></a>
+                    <button id="keepGoing" class="btn-primary"><span data-i18n="404_keep_going"></span></button>
+                </div>
+
+                <div id="warningLog"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Scripts stay unchanged -->
+    <script>
+        const ts = document.getElementById("timestamp");
+        ts.textContent = new Date().toLocaleString();
+    </script>
+
+    <script>
+        setInterval(() => {
+            const term = document.querySelector(".terminal");
+            term.classList.add("glitch-anim");
+            setTimeout(() => term.classList.remove("glitch-anim"), 120);
+        }, 1500 + Math.random() * 2000);
+    </script>
+
+    <script>
+        let clicks = 0;
+
+        const wrapper = document.querySelector(".error-wrapper");
+        const log = document.getElementById("warningLog");
+        const btn = document.getElementById("keepGoing");
+
+        btn.addEventListener("click", () => {
+            clicks++;
+
+            if (clicks === 1) {
+                wrapper.classList.add("glitch-1");
+                log.textContent += "\n[SYS] Warning: unauthorized action detected.";
+            }
+            else if (clicks === 2) {
+                wrapper.classList.add("glitch-2");
+                log.textContent += "\n[SYS] Critical: system integrity compromised.";
+            }
+            else if (clicks === 3) {
+                wrapper.classList.add("glitch-3");
+                log.textContent += "\n[SYS] ALERT: breach confirmed. Initiating fallback protocol…";
+
+                setTimeout(() => {
+                    localStorage.setItem("fromBreach", "yes");
+                    window.location.href = "/assets/pages/gate.html";
+                }, 1200);
+            }
+        });
+    </script>
+
+    <script src="/assets/js/i18n.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,153 @@
+/* ==============================
+   ARCHIVE HERO — PARALLAX SLIDER
+=================================*/
+
+.archive-hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    margin-bottom: 80px;
+}
+
+.parallax-slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ========= PARALLAX LAYERS ========= */
+
+.layer {
+    position: absolute;
+    inset: 0;
+    will-change: transform;
+}
+
+.bg-layer img {
+    filter: blur(18px) brightness(0.7);
+    transform: scale(1.1);
+}
+
+.mid-layer img {
+    filter: brightness(1.1);
+    transform: scale(1.03);
+}
+
+/* ==========================================================
+   UNIVERSAL WIN95 WINDOW COMPONENT (based on hero-window)
+========================================================== */
+
+.win95-window {
+    background: #1a1a1a;
+    border: 2px solid #000;
+    box-shadow:
+        0 0 0 2px #555,
+        0 10px 40px rgba(0,0,0,0.45);
+    padding: 0;
+    position: relative;
+}
+
+.win95-window .win95-titlebar {
+    background: #202020;
+    color: var(--snow);
+    padding: 6px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #000;
+    font-family: "VCR OSD Mono";
+}
+
+.win95-window .win95-title-left {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.win95-window .win95-buttons {
+    display: flex;
+    gap: 4px;
+}
+
+.win95-window .win95-buttons span {
+    width: 18px;
+    height: 18px;
+    background: #c0c0c0;
+    border: 2px solid #808080;
+    box-shadow: inset -1px -1px #fff, inset 1px 1px #000;
+    position: relative;
+}
+
+.win95-window .win95-buttons .btn-close {
+    background: var(--hot-fuchsia) !important;
+}
+
+.win95-window .win95-buttons span::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    image-rendering: pixelated;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.win95-window .btn-min::before { background-image: url("../../assets/icons/pixel-min.svg"); bottom: 2px; right: 2px; }
+.win95-window .btn-max::before { background-image: url("../../assets/icons/pixel-max.svg"); top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.win95-window .btn-close::before { background-image: url("../../assets/icons/pixel-close.svg"); top:50%; left:50%; transform: translate(-50%,-50%); }
+
+.win95-window .win95-content {
+    padding: 30px 40px;
+    text-align: center;
+}
+
+
+/* ========= NAV ARROWS ========= */
+
+.slide-prev,
+.slide-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(10, 10, 15, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(6px);
+    width: 48px;
+    height: 48px;
+    font-size: 22px;
+    color: var(--snow);
+    cursor: pointer;
+    z-index: 20;
+}
+
+.slide-prev { left: 30px; }
+.slide-next { right: 30px; }
+
+.slide-prev:hover,
+.slide-next:hover {
+    background: rgba(255, 0, 174, 0.35);
+    box-shadow: 0 0 12px rgba(255,0,174,0.5);
+}
+
+/* ========= SCROLL HINT ========= */
+
+.scroll-hint--archive {
+    position: absolute;
+    bottom: 26px;
+    left: 50%;
+    transform: translateX(-50%);
+}

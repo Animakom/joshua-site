@@ -1,0 +1,177 @@
+{
+  "laboustau": {
+    "title": {
+      "en": "Agence Laboustau - Real Estate Website",
+      "fr": "Agence Laboustau - Site D'agent Immobilier"
+    },
+    "slug": "laboustau",
+    "type": "realestate",
+    "subtitle": {
+      "en": "Showcase Website For a Real Estate Agency – WordPress",
+      "fr": "Site Vitrine Pour une Agence Immobilière – WordPress"
+    },
+    "year": "2025",
+    "role": {
+      "en": "WordPress Development, Frontend Development, UI/UX Design",
+      "fr": "Développement WordPress, Développement Frontend, Design UI/UX"
+    },
+    "description": {
+      "en": [
+        "A sleek, modern website for a real estate agent featuring high-end property listings, interactive sliders, and a coherent visual identity.",
+        "The project includes a full redesign, responsive layout, SEO optimization, and dynamic content structure."
+      ],
+      "fr": [
+        "Un site moderne et élégant pour un agent immobilier, avec des biens haut de gamme, des sliders interactifs et une identité visuelle cohérente.",
+        "Le projet inclut une refonte complète, un design responsive, une optimisation SEO et une structure de contenu dynamique."
+      ]
+    },
+    "thumbnail": "/assets/images/PNG/projects/thumbs/laboustau.png",
+    "heroImage": "/assets/images/PNG/projects/thumbs/laboustau-hero.png",
+    "gallery": [
+      "/assets/images/PNG/projects/laboustau/1.png",
+      "/assets/images/PNG/projects/laboustau/2.png",
+      "/assets/images/PNG/projects/laboustau/3.png"
+    ],
+    "technos": {
+      "en": ["WordPress", "Elementor", "ACF", "JavaScript", "Responsive Design"],
+      "fr": ["WordPress", "Elementor", "ACF", "JavaScript", "Design Responsive"]
+    },
+    "deliverables": {
+      "en": [
+        "Website Design",
+        "Property listing templates",
+        "Custom animations",
+        "SEO pass",
+        "Maintenance-ready structure",
+        "Responsive design for mobile and desktop",
+        "Immersive slider simulating property tours"
+      ],
+      "fr": [
+        "Design du site web",
+        "Templates d’annonces immobilières",
+        "Animations personnalisées",
+        "Optimisation SEO",
+        "Structure prête pour la maintenance",
+        "Design responsive mobile et desktop",
+        "Slider immersif simulant des visites de biens"
+      ]
+    }
+  },
+
+  "gipsyesthetic": {
+    "title": {
+      "en": "Gipsy Esthetic - Beauty Salon Website",
+      "fr": "Gipsy Esthetic - Site de Salon de Beauté"
+    },
+    "slug": "gipsyesthetic",
+    "type": "landing",
+    "subtitle": {
+      "en": "Landing Page for a Beauty Salon – WordPress",
+      "fr": "Landing Page pour un Salon de Beauté – WordPress"
+    },
+    "year": "2025",
+    "role": {
+      "en": "WordPress Development, Frontend Development, UI/UX Design",
+      "fr": "Développement WordPress, Développement Frontend, Design UI/UX"
+    },
+    "description": {
+      "en": [
+        "A landing page for a beauty salon, designed to attract new clients with a clean, elegant aesthetic and user-friendly navigation.",
+        "This project involved creating a visually appealing layout, integrating booking functionalities, and ensuring mobile responsiveness."
+      ],
+      "fr": [
+        "Une landing page pour un salon de beauté, conçue pour attirer de nouveaux clients avec une esthétique élégante et une navigation intuitive.",
+        "Le projet inclut la création d'une mise en page visuellement soignée, l’intégration de fonctionnalités de prise de rendez-vous et un design totalement responsive."
+      ]
+    },
+    "thumbnail": "/assets/images/PNG/projects/thumbs/gipsyesthetic.png",
+    "heroImage": "/assets/images/PNG/projects/thumbs/gipsyesthetic-hero.png",
+    "gallery": [
+      "/assets/images/PNG/projects/gipsyesthetic/1.png",
+      "/assets/images/PNG/projects/gipsyesthetic/2.png",
+      "/assets/images/PNG/projects/gipsyesthetic/3.png",
+      "/assets/images/PNG/projects/gipsyesthetic/4.png",
+      "/assets/images/PNG/projects/gipsyesthetic/5.png"
+    ],
+    "technos": {
+      "en": ["WordPress", "Elementor", "ACF", "JavaScript", "Responsive Design"],
+      "fr": ["WordPress", "Elementor", "ACF", "JavaScript", "Design Responsive"]
+    },
+    "deliverables": {
+      "en": [
+        "Landing page design",
+        "Booking system integration",
+        "Brand-aligned visual identity",
+        "SEO optimization",
+        "Responsive mobile-first layout",
+        "Smooth UI animations"
+      ],
+      "fr": [
+        "Design de la landing page",
+        "Intégration du système de rendez-vous",
+        "Identité visuelle cohérente avec la marque",
+        "Optimisation SEO",
+        "Mise en page responsive mobile-first",
+        "Animations UI fluides"
+      ]
+    }
+  },
+
+  "beunique": {
+    "title": {
+      "en": "Be Unique - Sports Clothing E-Shop",
+      "fr": "Be Unique - Boutique de Vêtements de Sport"
+    },
+    "slug": "beunique",
+    "type": "ecommerce",
+    "subtitle": {
+      "en": "E-Commerce Website for Sports Clothing – WooCommerce",
+      "fr": "Site E-Commerce pour Vêtements de Sport – WooCommerce"
+    },
+    "year": "2025",
+    "role": {
+      "en": "WordPress Development, Frontend Development, UI/UX Design",
+      "fr": "Développement WordPress, Développement Frontend, Design UI/UX"
+    },
+    "description": {
+      "en": [
+        "An e-commerce platform for a sports clothing brand featuring an optimized product grid, seamless checkout flow, and a responsive design.",
+        "The project includes a clean layout, product filtering, and a mobile-optimized shopping experience."
+      ],
+      "fr": [
+        "Une plateforme e-commerce pour une marque de vêtements de sport avec une grille produit optimisée, un tunnel de commande fluide et un design responsive.",
+        "Le projet inclut une mise en page épurée, un système de filtres produits et une expérience d’achat optimisée sur mobile."
+      ]
+    },
+    "thumbnail": "/assets/images/PNG/projects/thumbs/beunique.png",
+    "heroImage": "/assets/images/PNG/projects/thumbs/beunique-hero.png",
+    "gallery": [
+      "/assets/images/PNG/projects/beunique/1.png",
+      "/assets/images/PNG/projects/beunique/2.png",
+      "/assets/images/PNG/projects/beunique/3.png",
+      "/assets/images/PNG/projects/beunique/4.png"
+    ],
+    "technos": {
+      "en": ["WordPress", "WooCommerce", "ACF", "JavaScript", "Responsive Design"],
+      "fr": ["WordPress", "WooCommerce", "ACF", "JavaScript", "Design Responsive"]
+    },
+    "deliverables": {
+      "en": [
+        "E-commerce UI design",
+        "Product pages & filtering system",
+        "Optimized checkout flow",
+        "SEO foundation",
+        "Responsive UI for mobile and desktop",
+        "Custom animations & micro-interactions"
+      ],
+      "fr": [
+        "Design UI e-commerce",
+        "Pages produits et système de filtres",
+        "Tunnel de paiement optimisé",
+        "Fondation SEO",
+        "Interface responsive mobile et desktop",
+        "Animations personnalisées et micro-interactions"
+      ]
+    }
+  }
+}

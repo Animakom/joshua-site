@@ -1,0 +1,6 @@
+✔ Annotate major sections
+✔ Mention the intended flow
+✔ Mention behavior (sticky/overlap/responsive collapse)
+✔ Mention hierarchy (primary, secondary, tertiary)
+✔ Mention any specific sizing/spacing you care about
+✔ Mention what is decoration vs content
